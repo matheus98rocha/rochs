@@ -1,33 +1,38 @@
-import { ScrollView, StyleSheet, View } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
 import Card from "./src/components/card/card";
+import { HomeWrapper, ListItems } from "./app.styles";
 
 export default function App() {
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </View>
-    </ScrollView>
+    <HomeWrapper>
+      <View style={styles.header}></View>
+      <ScrollView>
+        <ListItems>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </ListItems>
+      </ScrollView>
+    </HomeWrapper>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  listItens: {
     flex: 1,
-    padding: 0,
-    backgroundColor: "#fff",
-    display: "flex",
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    flexDirection: "row",
     flexWrap: "wrap",
     gap: 2,
+  },
+  header: {
+    height: 60,
+    backgroundColor: "#fefefe",
   },
 });
