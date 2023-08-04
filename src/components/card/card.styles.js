@@ -16,9 +16,9 @@ export const PriceContainer = styled.View`
   position: absolute;
   background-color: #ffff;
   left: 8px;
-  bottom: 110px;
+  bottom: 120px;
 
-  width: 100px;
+  width: 90px;
   height: 50px;
 
   align-items: center;
