@@ -10,7 +10,7 @@ export const InfoCardStyles = styled.View`
   justify-content: center;
   position: absolute;
   left: 10px;
-  bottom: 80px;
+  bottom: 60px;
 `;
 
 export const InfoCardText = styled.Text`

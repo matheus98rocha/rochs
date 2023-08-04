@@ -1,14 +1,31 @@
-import React from "react";
-import { Image, Text, View } from "react-native";
-import { CardStyles, PriceContainer, PriceText } from "./card.styles";
+import React, { useState } from "react";
+import { Image, Text, Touchable, TouchableWithoutFeedback, View } from "react-native";
+import {
+  CardStyles,
+  FavoriteWrapper,
+  PriceContainer,
+  PriceText,
+} from "./card.styles";
 import InfoCard from "./info-card/info-card";
 
+import { AntDesign } from "@expo/vector-icons";
+
 function Card() {
+  const [isFavorite, setIsFavorite] = useState(false);
   return (
     <CardStyles>
+      <TouchableWithoutFeedback onPress={() => setIsFavorite(!isFavorite)}>
+        <FavoriteWrapper>
+          <AntDesign
+            name={isFavorite ? "heart" : "hearto"}
+            size={28}
+            color={isFavorite ? "red" : "black"}
+          />
+        </FavoriteWrapper>
+      </TouchableWithoutFeedback>
       <Image
         source={require("./camisa.png")}
-        style={{ width: 200, height: 200 }}
+        style={{ width: 190, height: 190 }}
       />
       <InfoCard labelInfoCard={"FRETE GRÁTIS"} />
       <InfoCard labelInfoCard={"FRETE GRÁTIS"} />
